@@ -28,24 +28,31 @@ module.exports = function (app) {
 		// This works because of our body-parser middleware
 		var newFriend = req.body;
 		questionAnswers = newFriend.questions;
-
+		// var questionValues = Object.values(questionAnswers);
+	
 		// console.log(newFriend.name);
-		// console.log(questionAnswers);
+		// console.log("NEW FRIEND:", questionAnswers);
 		// var scores = Object.values(newFriend.questions);
 		
-		friendsData.push(newFriend);
-		 //get all the friends in the list 
+		//get all the friends in the list 
 		for (var i = 0; i < friendsData.length; i++){
 			var score = 0;
-			// console.log(friendsData[i].questions);
+			console.log("Name:", friendsData[i].name);
+			console.log("Friends list:", friendsData[i].questions);
+
+			//gets the absolute value of the difference between each index of the POST array and the existing arrays
 			for(var j = 0; j < friendsData[i].questions.length; j++){
-				console.log("FRIENDSDATA:", friendsData[i].questions[j]);
-				console.log("USERENTRY:", questionAnswers[j]);
+				
+				console.log("ABS Value of post & Arr:", Math.abs(friendsData[i].questions[j] - questionAnswers[j]));
+				console.log("----------------");
+				// console.log("USERENTRY:", questionAnswers[j]);
 			}
 			// console.log("Score",score);
 		}
 		
-		// console.log("FriendsData:", friendsData);
+		//newFriend gets pushed to the friendsArr friends.js after it is compared with the existing friend in arr.
+		friendsData.push(newFriend);
+		console.log("Data Pushed:", friendsData);
 		res.json(newFriend);
 	});
 
