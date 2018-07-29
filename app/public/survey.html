@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
 	 crossorigin="anonymous">
 
-	 <link rel="stylesheet" href="CSS/styles.css"/>
+	 <link rel="stylesheet" type="text/css" href="styles.css"/>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -256,7 +256,13 @@
 		}).done(function(res){
 
 			$("#bestfriend-name").html(res.name);
-			$("#bestfriend-img").attr("src", res.photo);
+			if (res.photo != ""){
+				$("#bestfriend-img").attr("src", res.photo);
+			}
+			else{
+				$("#bestfriend-img").attr("src", "https://images.pexels.com/photos/39571/gorilla-silverback-animal-silvery-grey-39571.jpeg?cs=srgb&dl=animal-ape-fur-39571.jpg&fm=jpg");
+			}
+
 			 $("#results-modal").modal();	
 		})
 

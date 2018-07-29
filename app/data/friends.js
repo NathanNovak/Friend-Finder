@@ -3,7 +3,7 @@
 var friendsArr = [
 	{
 		name: 'Nathan',
-		photo: "https://pbs.twimg.com/media/BduTxWnIUAAKT_5.jpg",
+		photo:"https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/0/01/Gerard-butler-02.jpg/revision/latest?cb=20160530071421",
 		questions:[
 			'5',
 			'4',
