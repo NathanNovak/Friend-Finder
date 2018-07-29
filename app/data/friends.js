@@ -3,7 +3,7 @@
 var friendsArr = [
 	{
 		name: 'Nathan',
-		photo: "https://photos.app.goo.gl/DsfkTHVCGUn3uFeT6",
+		photo: "https://pbs.twimg.com/media/BduTxWnIUAAKT_5.jpg",
 		questions:[
 			'5',
 			'4',
@@ -19,9 +19,9 @@ var friendsArr = [
 	},
 	{
 		name: 'Jessica',
-		photo: "https://photos.app.goo.gl/DsfkTHVCGUn3uFeT6",
+		photo: "https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2F2014%2F12%2Fmain%2F1501p54-jessica-alba.jpg%3Fitok%3DcslsNJqX&w=300&q=85",
 		questions:[
-			'5',
+			'3',
 			'3',
 			'4',
 			'2',
@@ -30,7 +30,7 @@ var friendsArr = [
 			'2',
 			'5',
 			'2',
-			'3'
+			'1'
 		]
 	},
 ];

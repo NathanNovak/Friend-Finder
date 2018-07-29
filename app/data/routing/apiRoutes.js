@@ -28,32 +28,49 @@ module.exports = function (app) {
 		// This works because of our body-parser middleware
 		var newFriend = req.body;
 		questionAnswers = newFriend.questions;
-		// var questionValues = Object.values(questionAnswers);
-	
+		var lowestScore = 1000;
+		var bestFriend = "";
 		// console.log(newFriend.name);
 		// console.log("NEW FRIEND:", questionAnswers);
 		// var scores = Object.values(newFriend.questions);
 		
-		//get all the friends in the list 
+		//get all the friends currently in the list  
 		for (var i = 0; i < friendsData.length; i++){
 			var score = 0;
-			console.log("Name:", friendsData[i].name);
-			console.log("Friends list:", friendsData[i].questions);
+			// console.log("Name:", friendsData[i].name);
+			// console.log("Friends list:", friendsData[i].questions);
 
-			//gets the absolute value of the difference between each index of the POST array and the existing arrays
+			//loops through existing friends question answers.
+			//gets the absolute value of the difference between each index of the newFriend and the existing friends
 			for(var j = 0; j < friendsData[i].questions.length; j++){
 				
-				console.log("ABS Value of post & Arr:", Math.abs(friendsData[i].questions[j] - questionAnswers[j]));
-				console.log("----------------");
-				// console.log("USERENTRY:", questionAnswers[j]);
+
+				var diff = Math.abs(friendsData[i].questions[j] - questionAnswers[j]);
+
+				score = score + diff;
+				console.log("ABS Value of post & Arr:", diff, "Score:", score);
+				// console.log("----------------");
 			}
-			// console.log("Score",score);
+			// console.log("Final Score for", friendsData[i].name, ":", score);
+			if (score < lowestScore){
+				lowestScore = score;
+				bestFriend = {
+					name: friendsData[i].name,
+					photo: friendsData[i].photo
+			};
+		}
+			// difference();
 		}
 		
 		//newFriend gets pushed to the friendsArr friends.js after it is compared with the existing friend in arr.
 		friendsData.push(newFriend);
 		console.log("Data Pushed:", friendsData);
-		res.json(newFriend);
+
+		res.json(bestFriend);
+		console.log("Your new best friend is", bestFriend, "!");
+
+
 	});
 
 };
+
