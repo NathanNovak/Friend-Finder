@@ -33,6 +33,54 @@ var friendsArr = [
 			'1'
 		]
 	},
+	{
+		name: 'Bob Villa',
+		photo: "http://coolspotters.com/files/photos/180881/bob-villa-profile.jpg?1357507809",
+		questions:[
+			'4',
+			'5',
+			'3',
+			'3',
+			'1',
+			'3',
+			'4',
+			'2',
+			'4',
+			'1'
+		]
+	},
+	{
+		name: 'Sally McFly',
+		photo: "http://360jokes.com/wp-content/uploads/2012/03/first-in-the-class.jpg",
+		questions:[
+			'2',
+			'5',
+			'4',
+			'4',
+			'3',
+			'3',
+			'2',
+			'5',
+			'3',
+			'1'
+		]
+	},
+	{
+		name: 'Billy-Bob ',
+		photo: "https://i.imgur.com/Zx7VcXT.jpg",
+		questions:[
+			'2',
+			'1',
+			'4',
+			'4',
+			'5',
+			'3',
+			'1',
+			'1',
+			'2',
+			'1'
+		]
+	},
 ];
 
 module.exports = friendsArr;
